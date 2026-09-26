@@ -1,0 +1,412 @@
+/* ========== COLORS ========== */
+:root {
+  --accent: #264266;       /* buttons, contact box */
+  --accent-soft: #DCEAF0;  /* image placeholders */
+  --background: #FFFFFF;
+  --card: #F3F7F8;
+  --text: #172B45;
+  --text-light: #4A5D75;
+  --border: #E3EBEF;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-soft: #1C3047;
+    --background: #0E1826;
+    --card: #15223A;
+    --text: #EAF0F5;
+    --text-light: #BCCAD7;
+    --border: #26374F;
+  }
+}
+
+/* ========== BASICS ========== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.muted {
+  color: var(--text-light);
+}
+
+.small {
+  font-size: 15px;
+}
+
+/* ========== NAVIGATION ========== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--text-light);
+}
+
+/* ========== BUTTONS ========== */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.button {
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #FFFFFF;
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+/* ========== HERO ========== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero h1 {
+  margin-top: 24px;
+  font-size: 48px;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 21px;
+  color: var(--text-light);
+}
+
+/* ========== CARDS (about, experience, education) ========== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px 32px;
+}
+
+.about-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* ========== SECTIONS ========== */
+.section {
+  padding-top: 56px;
+  padding-bottom: 24px;
+}
+
+.section > h2 {
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* One company or school */
+.entry + .entry {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+
+/* Roles at one company, joined by a line */
+.role {
+  position: relative;
+  margin-top: 18px;
+  padding-left: 26px;
+}
+
+.role h4 {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.role p {
+  margin-top: 2px;
+  font-size: 16px;
+}
+
+.role .small {
+  font-size: 15px;
+}
+
+.role::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-light);
+}
+
+.role:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 24px;
+  bottom: -24px;
+  width: 2px;
+  background: var(--border);
+}
+
+/* ========== PROJECTS ========== */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.project-card {
+  padding: 12px 12px 20px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--card);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  border-color: var(--text-light);
+}
+
+.project-card h3 {
+  margin: 18px 8px 6px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.project-card p {
+  margin: 0 8px;
+}
+
+/* Image placeholder. Put an <img> inside to show a screenshot. */
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--accent-soft);
+  color: var(--text-light);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== CONTACT ========== */
+.contact-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--accent);
+  color: #FFFFFF;
+}
+
+.contact-box h2 {
+  margin-bottom: 6px;
+  font-size: 28px;
+}
+
+.contact-box .button {
+  background: #FFFFFF;
+  color: var(--accent);
+}
+
+footer {
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+/* ========== PROJECT POPUP ========== */
+.popup {
+  width: 90%;
+  max-width: 720px;
+  max-height: 85vh;
+  padding: 0;
+  border: none;
+  border-radius: 24px;
+  background: var(--card);
+  color: var(--text);
+}
+
+.popup::backdrop {
+  background: rgba(15, 25, 40, 0.5);
+}
+
+.popup-content {
+  padding: 28px;
+}
+
+.popup h2 {
+  margin: 24px 0 8px;
+  font-size: 28px;
+}
+
+.popup h3 {
+  margin: 24px 0 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.popup ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.close-button {
+  display: block;
+  width: 44px;
+  height: 44px;
+  margin: 0 0 12px auto;
+  border: none;
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Images and videos that scroll sideways */
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery > * {
+  flex: 0 0 88%;
+  aspect-ratio: 16 / 10;
+  border: none;
+  border-radius: 16px;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+/* ========== PHONES ========== */
+@media (max-width: 700px) {
+  .nav-links {
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .hero,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .profile-photo {
+    width: 128px;
+    height: 128px;
+  }
+
+  .card,
+  .popup-content {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diyorbek Imomaliev | AI Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#">Diyorbek Imomaliev</a>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <header class="hero container">
+      <div>
+        <img class="profile-photo" src="images/me.jpg" alt="Diyorbek Imomaliev">
+        <h1>Diyorbek Imomaliev</h1>
+        <p class="subtitle">AI Engineer &amp; Data Science Student</p>
+
+        <!-- Replace each # with your profile link -->
+        <div class="buttons">
+          <a href="resume.pdf" class="button button-primary">Résumé</a>
+          <a href="#" class="button">GitHub</a>
+          <a href="#" class="button">LinkedIn</a>
+          <a href="#" class="button">LeetCode</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>About me</h2>
+        <p class="muted">
+          I build AI systems that solve real problems, from multilingual RAG assistants
+          to fraud detection models. Amiri Scholar studying AI and Data Science at UDST.
+        </p>
+
+        <div class="about-facts">
+          <div>
+            <p class="muted small">Based in</p>
+            <p>Doha, Qatar</p>
+          </div>
+          <div>
+            <p class="muted small">Education</p>
+            <p>B.Sc. AI &amp; Data Science</p>
+          </div>
+          <div>
+            <p class="muted small">GPA</p>
+            <p>3.87 / 4.0</p>
+          </div>
+          <div>
+            <p class="muted small">Focus</p>
+            <p>RAG, LLMs, ML</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <div class="entry">
+          <h3>UPDIVE LLC</h3>
+          <p class="muted small">Doha, Qatar · QSTP Internship Program</p>
+
+          <div class="role">
+            <h4>AI Engineer</h4>
+            <p class="muted small">Part-time · Dec 2025 – Feb 2026</p>
+            <p class="muted">Built a bilingual Arabic/English RAG assistant and automated tender sourcing with n8n.</p>
+          </div>
+
+          <div class="role">
+            <h4>Software Engineer Intern</h4>
+            <p class="muted small">Internship · Oct 2025 – Dec 2025</p>
+            <p class="muted">Rebuilt the company platform in React with full Arabic support and an admin CMS.</p>
+          </div>
+        </div>
+
+        <div class="entry">
+          <h3>OrbiDefence</h3>
+
+          <div class="role">
+            <h4>Data Scientist Intern</h4>
+            <p class="muted small">Part-time</p> <!-- add dates here -->
+            <p class="muted">Built and deployed fraud detection models on highly imbalanced data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <!-- The id in openProject('...') must match a popup id below.
+         To show a screenshot, put <img src="images/file.png" alt=""> inside .media -->
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+
+      <div class="project-grid">
+      <button class="project-card" onclick="openProject('project-1')">
+        <div class="media">Screenshot</div>
+        <h3>Bilingual RAG Assistant</h3>
+        <p class="muted">Answers Arabic and English questions from English documentation.</p>
+      </button>
+
+      <button class="project-card" onclick="openProject('project-2')">
+        <div class="media">Screenshot</div>
+        <h3>Speaking Practice Bot</h3>
+        <p class="muted">Helps users practise IELTS speaking with instant AI feedback.</p>
+      </button>
+
+      <button class="project-card" onclick="openProject('project-3')">
+        <div class="media">Screenshot</div>
+        <h3>Cross-Language Communication Tool</h3>
+        <p class="muted">Translates Uzbek, English and Arabic in real time, by voice or text.</p>
+      </button>
+
+      <button class="project-card" onclick="openProject('project-4')">
+        <div class="media">Screenshot</div>
+        <h3>Fraud Detection Model</h3>
+        <p class="muted">Detects rare fraud cases in highly imbalanced data.</p>
+      </button>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section class="section container">
+      <h2>Education</h2>
+
+      <div class="card">
+        <h3>University of Doha for Science and Technology</h3>
+        <p class="muted small">B.Sc. Artificial Intelligence and Data Science</p>
+        <p class="muted small">GPA 3.87 / 4.0 · Dean's List · Amiri Scholar</p>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section container">
+      <div class="contact-box">
+        <div>
+          <h2>Let's work together</h2>
+          <p>Open to AI, data science and software engineering roles.</p>
+        </div>
+        <a href="mailto:60312510@udst.edu.qa" class="button">Email me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container muted small">© 2026 Diyorbek Imomaliev</footer>
+
+  <!-- ========== PROJECT POPUPS ========== -->
+  <!-- Add images or videos to the gallery:
+           <img src="images/file.png" alt="">
+           <video src="videos/file.mp4" controls></video>
+           <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+
+    <dialog id="project-1" class="popup">
+      <div class="popup-content">
+        <button class="close-button" onclick="closeProject('project-1')" aria-label="Close">✕</button>
+
+        <div class="gallery">
+          <div class="media">Image 1</div>
+          <div class="media">Image 2</div>
+          <div class="media">Demo video</div>
+        </div>
+
+        <h2>Bilingual RAG Assistant</h2>
+        <p class="muted">An AI assistant that answers Arabic and English questions from English product documentation, built at UPDIVE.</p>
+
+        <h3>What I did</h3>
+        <ul class="muted">
+          <li>Tuned document chunking for more accurate retrieval</li>
+          <li>Implemented cross-lingual embedding search for Arabic queries</li>
+          <li>Evaluated retrieval on a 50-question test set</li>
+        </ul>
+
+        <h3>Result</h3>
+        <p class="muted">94% top-3 retrieval recall.</p>
+
+        <h3>Tools</h3>
+        <p class="muted">Python, RAG, embeddings, retrieval evaluation</p>
+      </div>
+    </dialog>
+
+    <dialog id="project-2" class="popup">
+      <div class="popup-content">
+        <button class="close-button" onclick="closeProject('project-2')" aria-label="Close">✕</button>
+
+        <div class="gallery">
+          <div class="media">Image 1</div>
+          <div class="media">Image 2</div>
+          <div class="media">Demo video</div>
+        </div>
+
+        <h2>Speaking Practice Bot</h2>
+        <p class="muted">A Telegram bot that helps users practise IELTS speaking with instant AI feedback.</p>
+
+        <h3>What I did</h3>
+        <ul class="muted">
+          <li>Built an async Python chatbot</li>
+          <li>Integrated Whisper for speech transcription</li>
+          <li>Used Gemini AI for corrections and suggestions</li>
+          <li>Added user analytics with SQLite and deployed with Docker</li>
+        </ul>
+
+        <h3>Tools</h3>
+        <p class="muted">Python, Whisper, Gemini, SQLite, Docker</p>
+
+        <div class="buttons">
+          <a href="#" class="button button-primary">Live demo</a>
+          <a href="#" class="button">Code</a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="project-3" class="popup">
+      <div class="popup-content">
+        <button class="close-button" onclick="closeProject('project-3')" aria-label="Close">✕</button>
+
+        <div class="gallery">
+          <div class="media">Image 1</div>
+          <div class="media">Image 2</div>
+          <div class="media">Demo video</div>
+        </div>
+
+        <h2>Cross-Language Communication Tool</h2>
+        <p class="muted">A real-time Uzbek, English and Arabic translator for voice and text, co-developed with a teammate.</p>
+
+        <h3>What I did</h3>
+        <ul class="muted">
+          <li>Built voice and text translation across three languages</li>
+          <li>Implemented AI-powered payment verification</li>
+          <li>Delivered an admin dashboard for analytics and subscriptions</li>
+        </ul>
+
+        <h3>Result</h3>
+        <p class="muted">95%+ translation accuracy and 85% fewer manual payment checks.</p>
+
+        <h3>Tools</h3>
+        <p class="muted">Python, AI speech and translation models</p>
+
+        <div class="buttons">
+          <a href="#" class="button button-primary">Live demo</a>
+          <a href="#" class="button">Code</a>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="project-4" class="popup">
+      <div class="popup-content">
+        <button class="close-button" onclick="closeProject('project-4')" aria-label="Close">✕</button>
+
+        <div class="gallery">
+          <div class="media">Image 1</div>
+          <div class="media">Image 2</div>
+          <div class="media">Demo video</div>
+        </div>
+
+        <h2>Fraud Detection Model</h2>
+        <p class="muted">Fraud detection models for highly imbalanced data, built at OrbiDefence in a 5-person team.</p>
+
+        <h3>What I did</h3>
+        <ul class="muted">
+          <li>Performed EDA and feature engineering</li>
+          <li>Balanced the data with SMOTE</li>
+          <li>Selected thresholds with stratified cross-validation</li>
+          <li>Deployed the model with Flask, Docker and AWS</li>
+        </ul>
+
+        <h3>Result</h3>
+        <p class="muted">Higher fraud recall while keeping precision.</p>
+
+        <h3>Tools</h3>
+        <p class="muted">Python, scikit-learn, Pandas, Flask, Docker, AWS</p>
+      </div>
+    </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
