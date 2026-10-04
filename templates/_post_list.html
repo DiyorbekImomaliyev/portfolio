@@ -1,0 +1,13 @@
+{% if posts %}
+  <div class="card">
+    {% for post in posts %}
+      <a class="entry post-link" href="{{ url_for('show_post', post_id=post.id) }}">
+        <h3>{{ post.title }}</h3>
+        <p class="muted small">{{ post.created_at | nice_date }}</p>
+        <p class="muted">{{ post.summary }}</p>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="muted">No posts yet.</p>
+{% endif %}

@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <header class="hero container">
+    <div>
+      <img class="profile-photo" src="{{ url_for('static', filename='images/me.jpg') }}" alt="Diyorbek Imomaliev">
+      <h1>Diyorbek Imomaliev</h1>
+      <p class="subtitle">AI Engineer &amp; Data Science Student</p>
+
+      <div class="buttons">
+        <a href="{{ url_for('static', filename='resume.pdf') }}" class="button button-primary">Résumé</a>
+        <a href="https://github.com/DiyorbekImomaliyev" class="button" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/diyorbek-imomaliev-90112925b/" class="button" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://leetcode.com/u/CR_DATA_SCIENCE/" class="button" target="_blank" rel="noopener">LeetCode</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>About me</h2>
+      <p class="muted">
+        I build AI systems that solve real problems, from multilingual RAG assistants
+        to fraud detection models. Amiri Scholar studying AI and Data Science at UDST.
+      </p>
+
+      <div class="about-facts">
+        <div>
+          <p class="muted small">Based in</p>
+          <p>Doha, Qatar</p>
+        </div>
+        <div>
+          <p class="muted small">Education</p>
+          <p>B.Sc. AI &amp; Data Science</p>
+        </div>
+        <div>
+          <p class="muted small">GPA</p>
+          <p>3.87 / 4.0</p>
+        </div>
+        <div>
+          <p class="muted small">Focus</p>
+          <p>RAG, LLMs, ML</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="experience" class="section container">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <div class="entry">
+        <h3>UPDIVE LLC</h3>
+        <p class="muted small">Doha, Qatar · QSTP Internship Program</p>
+
+        <div class="role">
+          <h4>AI Engineer</h4>
+          <p class="muted small">Part-time · Dec 2025 – Feb 2026</p>
+          <p class="muted">Built a bilingual Arabic/English RAG assistant and automated tender sourcing with n8n.</p>
+        </div>
+
+        <div class="role">
+          <h4>Software Engineer Intern</h4>
+          <p class="muted small">Internship · Oct 2025 – Dec 2025</p>
+          <p class="muted">Rebuilt the company platform in React with full Arabic support and an admin CMS.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <h3>OrbiDefence</h3>
+
+        <div class="role">
+          <h4>Data Scientist Intern</h4>
+          <p class="muted small">Part-time</p>
+          <p class="muted">Built and deployed fraud detection models on highly imbalanced data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section container">
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+      {% for project in projects %}
+        <button class="project-card" onclick="openProject('{{ project.id }}')">
+          <div class="media">
+            {% if project.cover_image %}
+              <img src="{{ url_for('static', filename=project.cover_image) }}" alt="">
+            {% else %}
+              Screenshot
+            {% endif %}
+          </div>
+          <h3>{{ project.title }}</h3>
+          <p class="muted">{{ project.card_text }}</p>
+        </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2>Education</h2>
+
+    <div class="card">
+      <h3>University of Doha for Science and Technology</h3>
+      <p class="muted small">B.Sc. Artificial Intelligence and Data Science</p>
+      <p class="muted small">GPA 3.87 / 4.0 · Dean's List · Amiri Scholar</p>
+    </div>
+  </section>
+
+  <section id="blog" class="section container">
+    <div class="section-header">
+      <h2>Blog</h2>
+      {% if is_admin %}
+        <a href="{{ url_for('new_post') }}" class="button button-primary">Write a post</a>
+      {% else %}
+        <a href="{{ url_for('blog') }}" class="muted">View all posts →</a>
+      {% endif %}
+    </div>
+
+    {% include "_post_list.html" %}
+  </section>
+
+  <section id="contact" class="section container">
+    <div class="contact-box">
+      <div>
+        <h2>Let's work together</h2>
+        <p>Open to AI, data science and software engineering roles.</p>
+      </div>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=60312510%40udst.edu.qa" class="button" target="_blank" rel="noopener">Email me</a>
+    </div>
+  </section>
+{% endblock %}
+
+{% block popups %}
+{% for project in projects %}
+  <dialog id="{{ project.id }}" class="popup">
+    <div class="popup-content">
+      <button class="close-button" onclick="closeProject('{{ project.id }}')" aria-label="Close">✕</button>
+
+      <div class="gallery">
+        {% for item in project.gallery %}
+          {% if "youtube.com" in item %}
+            <iframe src="{{ item }}" allowfullscreen></iframe>
+          {% elif item.endswith(".mp4") %}
+            <video src="{{ url_for('static', filename=item) }}" controls></video>
+          {% else %}
+            <img src="{{ url_for('static', filename=item) }}" alt="">
+          {% endif %}
+        {% else %}
+          <div class="media">Image 1</div>
+          <div class="media">Image 2</div>
+        {% endfor %}
+      </div>
+
+      <h2>{{ project.title }}</h2>
+      <p class="muted">{{ project.summary }}</p>
+
+      <h3>What I did</h3>
+      <ul class="muted">
+        {% for point in project.what_i_did %}
+          <li>{{ point }}</li>
+        {% endfor %}
+      </ul>
+
+      {% if project.result %}
+        <h3>Result</h3>
+        <p class="muted">{{ project.result }}</p>
+      {% endif %}
+
+      <h3>Tools</h3>
+      <p class="muted">{{ project.tools }}</p>
+
+      {% if project.demo_link or project.code_link %}
+        <div class="buttons">
+          {% if project.demo_link %}
+            <a href="{{ project.demo_link }}" class="button button-primary">Live demo</a>
+          {% endif %}
+          {% if project.code_link %}
+            <a href="{{ project.code_link }}" class="button">Code</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </dialog>
+{% endfor %}
+{% endblock %}

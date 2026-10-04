@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ heading }}{% endblock %}
+
+{% block content %}
+  <section class="section container narrow">
+    <h2>{{ heading }}</h2>
+
+    <form method="post" class="card form">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="title" value="{{ post.title or '' }}" required>
+
+      <label for="summary">Summary</label>
+      <p class="muted small">One sentence shown in the post list.</p>
+      <input type="text" id="summary" name="summary" value="{{ post.summary or '' }}" required>
+
+      <label for="content">Content</label>
+      <p class="muted small">
+        Write in Markdown: ## Heading, **bold**, - list item, [link](https://...),
+        ![image](/static/images/file.png), and ``` for code blocks.
+      </p>
+      <textarea id="content" name="content" rows="18" required>{{ post.content or '' }}</textarea>
+
+      <div class="buttons">
+        <button type="submit" class="button button-primary">Save</button>
+        <a href="{{ url_for('admin') }}" class="button">Cancel</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+  <section class="section container">
+    <div class="section-header">
+      <h2>Your posts</h2>
+      <a href="{{ url_for('new_post') }}" class="button button-primary">New post</a>
+    </div>
+
+    {% if posts %}
+      <div class="card">
+        {% for post in posts %}
+          <div class="entry admin-row">
+            <div>
+              <h3>{{ post.title }}</h3>
+              <p class="muted small">{{ post.created_at | nice_date }}</p>
+            </div>
+
+            <div class="buttons">
+              <a href="{{ url_for('show_post', post_id=post.id) }}" class="button">View</a>
+              <a href="{{ url_for('edit_post', post_id=post.id) }}" class="button">Edit</a>
+              <form method="post" action="{{ url_for('delete_post', post_id=post.id) }}"
+                    onsubmit="return confirm('Delete this post?');">
+                <button type="submit" class="button">Delete</button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="muted">No posts yet. Click "New post" to write your first one.</p>
+    {% endif %}
+  </section>
+{% endblock %}

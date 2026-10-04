@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | Diyorbek Imomaliev{% endblock %}
+
+{% block content %}
+  <section class="section container">
+    <div class="section-header">
+      <h2>Blog</h2>
+      {% if is_admin %}
+        <a href="{{ url_for('new_post') }}" class="button button-primary">Write a post</a>
+      {% endif %}
+    </div>
+
+    {% include "_post_list.html" %}
+  </section>
+{% endblock %}

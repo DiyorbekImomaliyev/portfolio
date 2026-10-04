@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}Diyorbek Imomaliev | AI Engineer{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="{{ url_for('home') }}">Diyorbek Imomaliev</a>
+      <div class="nav-links">
+        <a href="{{ url_for('home') }}#experience" class="hide-on-phone">Experience</a>
+        <a href="{{ url_for('home') }}#projects">Projects</a>
+        <a href="{{ url_for('blog') }}">Blog</a>
+        <a href="{{ url_for('home') }}#contact" class="hide-on-phone">Contact</a>
+
+        {% if is_admin %}
+          <a href="{{ url_for('new_post') }}">New post</a>
+          <a href="{{ url_for('admin') }}">My posts</a>
+          <a href="{{ url_for('logout') }}">Log out</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+      <p class="notice container">{{ message }}</p>
+    {% endfor %}
+  {% endwith %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+
+  {% block popups %}{% endblock %}
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

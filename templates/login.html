@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Admin login{% endblock %}
+
+{% block content %}
+  <section class="section container narrow">
+    <h2>Admin login</h2>
+
+    <form method="post" class="card form">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required autofocus>
+
+      <button type="submit" class="button button-primary">Log in</button>
+    </form>
+  </section>
+{% endblock %}
