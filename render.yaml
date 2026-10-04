@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: diyorbek
+    name: diyorbekai
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
