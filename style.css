@@ -239,7 +239,7 @@ p {
 /* ========== PROJECTS ========== */
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -256,6 +256,31 @@ p {
 
 .project-card:hover {
   border-color: var(--text-light);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+}
+
+.project-card:focus-visible,
+.button:focus-visible,
+.close-button:focus-visible {
+  outline: 3px solid var(--text-light);
+  outline-offset: 2px;
+}
+
+.project-card .tags {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .project-card h3 {
@@ -284,6 +309,37 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ========== RESEARCH, LEADERSHIP ========== */
+.research {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.research h3 {
+  margin-bottom: 4px;
+  font-size: 22px;
+}
+
+.research p + p {
+  margin-top: 10px;
+}
+
+.two-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.two-cards .entry h3 {
+  font-size: 17px;
+}
+
+.two-cards .buttons {
+  margin-top: 12px;
 }
 
 /* ========== CONTACT ========== */
@@ -373,11 +429,27 @@ footer {
 
 .gallery > * {
   flex: 0 0 88%;
+  background: var(--accent-soft);
   aspect-ratio: 16 / 10;
   border: none;
   border-radius: 16px;
   object-fit: cover;
   scroll-snap-align: start;
+}
+
+/* ========== TABLETS: 3 projects stay in a row, just tighter ========== */
+@media (max-width: 960px) and (min-width: 701px) {
+  .project-grid {
+    gap: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 17px;
+  }
+
+  .project-card p {
+    font-size: 15px;
+  }
 }
 
 /* ========== PHONES ========== */
@@ -388,7 +460,9 @@ footer {
   }
 
   .hero,
-  .project-grid {
+  .project-grid,
+  .research,
+  .two-cards {
     grid-template-columns: 1fr;
   }
 

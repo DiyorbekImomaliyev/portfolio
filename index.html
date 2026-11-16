@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Diyorbek Imomaliev | AI Engineer</title>
+  <meta name="description" content="Diyorbek Imomaliev, AI Engineer and Data Science student at UDST. RAG assistants, AI agents, fraud detection and federated learning.">
+  <meta property="og:title" content="Diyorbek Imomaliev | AI Engineer">
+  <meta property="og:description" content="AI agents, RAG assistants, fraud detection and federated learning. Amiri Scholar at UDST, Doha.">
+  <meta property="og:image" content="images/doorstep/control-room.jpg">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +19,7 @@
       <div class="nav-links">
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -27,20 +33,19 @@
         <h1>Diyorbek Imomaliev</h1>
         <p class="subtitle">AI Engineer &amp; Data Science Student</p>
 
-        <!-- Replace each # with your profile link -->
         <div class="buttons">
           <a href="resume.pdf" class="button button-primary">Résumé</a>
-          <a href="#" class="button">GitHub</a>
-          <a href="#" class="button">LinkedIn</a>
-          <a href="#" class="button">LeetCode</a>
+          <a href="https://github.com/DiyorbekImomaliyev" class="button" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/diyorbek-imomaliev-90112925b/" class="button" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
 
       <div class="card">
         <h2>About me</h2>
         <p class="muted">
-          I build AI systems that solve real problems, from multilingual RAG assistants
-          to fraud detection models. Amiri Scholar studying AI and Data Science at UDST.
+          I build AI systems that solve real problems, from AI agents that handle refunds
+          to bilingual RAG assistants and fraud detection models. Amiri Scholar studying
+          AI and Data Science at UDST.
         </p>
 
         <div class="about-facts">
@@ -58,7 +63,7 @@
           </div>
           <div>
             <p class="muted small">Focus</p>
-            <p>RAG, LLMs, ML</p>
+            <p>AI agents, RAG, ML</p>
           </div>
         </div>
       </div>
@@ -71,18 +76,18 @@
       <div class="card">
         <div class="entry">
           <h3>UPDIVE LLC</h3>
-          <p class="muted small">Doha, Qatar · QSTP Internship Program</p>
+          <p class="muted small">Doha, Qatar · Cybersecurity company · QSTP Internship Program</p>
 
           <div class="role">
             <h4>AI Engineer</h4>
             <p class="muted small">Part-time · Dec 2025 – Feb 2026</p>
-            <p class="muted">Built a bilingual Arabic/English RAG assistant and automated tender sourcing with n8n.</p>
+            <p class="muted">Built a bilingual Arabic/English RAG assistant over product documentation, reaching 94% top-3 retrieval recall on a 50-question test set. Replaced a manual daily tender search with an n8n pipeline that routes new listings to analysts.</p>
           </div>
 
           <div class="role">
             <h4>Software Engineer Intern</h4>
             <p class="muted small">Internship · Oct 2025 – Dec 2025</p>
-            <p class="muted">Rebuilt the company platform in React with full Arabic support and an admin CMS.</p>
+            <p class="muted">Rebuilt the customer-facing website in React with full Arabic right-to-left support, SEO and a protected admin CMS.</p>
           </div>
         </div>
 
@@ -91,54 +96,125 @@
 
           <div class="role">
             <h4>Data Scientist Intern</h4>
-            <p class="muted small">Part-time</p> <!-- add dates here -->
-            <p class="muted">Built and deployed fraud detection models on highly imbalanced data.</p>
+            <p class="muted small">Part-time · Apr 2025 – Oct 2025</p>
+            <p class="muted">Built fraud models on a heavily imbalanced dataset in a 5-person team, then deployed them as a Dockerized Flask API on AWS for B2B clients.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ========== PROJECTS ========== -->
-    <!-- The id in openProject('...') must match a popup id below.
-         To show a screenshot, put <img src="images/file.png" alt=""> inside .media -->
     <section id="projects" class="section container">
       <h2>Projects</h2>
 
       <div class="project-grid">
-      <button class="project-card" onclick="openProject('project-1')">
-        <div class="media">Screenshot</div>
-        <h3>Bilingual RAG Assistant</h3>
-        <p class="muted">Answers Arabic and English questions from English documentation.</p>
-      </button>
+        <button class="project-card" onclick="openProject('project-doorstep')">
+          <div class="media"><img src="images/doorstep/control-room.jpg" alt="Doorstep delivery control room" loading="lazy"></div>
+          <h3>Doorstep</h3>
+          <p class="muted">AI agent for small PayPal sellers that audits delivery scans, refunds buyers and drafts carrier claims.</p>
+          <p class="tags">PayPal AI Hackathon 2026 · Live</p>
+        </button>
 
-      <button class="project-card" onclick="openProject('project-2')">
-        <div class="media">Screenshot</div>
-        <h3>Speaking Practice Bot</h3>
-        <p class="muted">Helps users practise IELTS speaking with instant AI feedback.</p>
-      </button>
+        <button class="project-card" onclick="openProject('project-bandwidth')">
+          <div class="media"><img src="images/bandwidth/chat.svg" alt="Bandwidth Telegram bot conversation" loading="lazy"></div>
+          <h3>Bandwidth</h3>
+          <p class="muted">Private Telegram agent that plans the study day, ranks opportunities and fills in applications.</p>
+          <p class="tags">Python · Local LLM · Privacy by design</p>
+        </button>
 
-      <button class="project-card" onclick="openProject('project-3')">
-        <div class="media">Screenshot</div>
-        <h3>Cross-Language Communication Tool</h3>
-        <p class="muted">Translates Uzbek, English and Arabic in real time, by voice or text.</p>
-      </button>
-
-      <button class="project-card" onclick="openProject('project-4')">
-        <div class="media">Screenshot</div>
-        <h3>Fraud Detection Model</h3>
-        <p class="muted">Detects rare fraud cases in highly imbalanced data.</p>
-      </button>
+        <button class="project-card" onclick="openProject('project-fraud')">
+          <div class="media"><img src="images/fraud/fig1_overview.jpg" alt="Card fraud dataset overview charts" loading="lazy"></div>
+          <h3>Card-Fraud Detection System</h3>
+          <p class="muted">End-to-end ML pipeline comparing 12 models, with drift study and SHAP explanations.</p>
+          <p class="tags">XGBoost · SHAP · 0.984 PR-AUC</p>
+        </button>
       </div>
     </section>
 
-    <!-- ========== EDUCATION ========== -->
+    <!-- ========== RESEARCH ========== -->
+    <section id="research" class="section container">
+      <h2>Research</h2>
+
+      <div class="card research">
+        <div class="media"><img src="images/research/federated.svg" alt="Federated learning diagram" loading="lazy"></div>
+        <div>
+          <h3>Federated Learning on Edge Devices for Energy</h3>
+          <p class="muted small">Undergraduate Researcher · UDST Energy Research Team (5 students) · 2026 – Present</p>
+          <p class="muted">Studying federated training on edge devices: each site shares only model updates, so raw energy data stays local. Building reproducible forecasting and optimisation experiments in Python.</p>
+          <div class="buttons">
+            <a href="https://github.com/DiyorbekImomaliyev/edge-fl-energy" class="button" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://drive.google.com/drive/folders/1R_4AgQUpk91XsrJ2mACnljvmEStVPRPk" class="button" target="_blank" rel="noopener">Drive</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LEADERSHIP & AWARDS ========== -->
     <section class="section container">
-      <h2>Education</h2>
+      <h2>Leadership &amp; Awards</h2>
+
+      <div class="two-cards">
+        <div class="card">
+          <h2>Leadership</h2>
+          <div class="entry">
+            <h3>AWS Student Builder Group Leader, UDST</h3>
+            <p class="muted small">Oct 2026 – Present</p>
+            <p class="muted">Selected by AWS to found Qatar's first AWS Student Builder Group and develop its yearly cloud curriculum.</p>
+            <div class="buttons"><a href="https://www.meetup.com/aws-sbg-at-university-of-doha-for-science-and-technology/" class="button" target="_blank" rel="noopener">Meetup</a></div>
+          </div>
+          <div class="entry">
+            <h3>Co-Lead, AI Club, UDST</h3>
+            <p class="muted small">Sep 2026 – Present</p>
+            <p class="muted">Co-developed a 4-week AI curriculum and organized 3 workshops for an 80+ member club.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Awards</h2>
+          <div class="entry">
+            <h3>8th of 400+, Qatar University Math Championship 2025</h3>
+            <p class="muted">Level 2, as a second-year against upper-year students.</p>
+          </div>
+          <div class="entry">
+            <h3>2nd Place, Tashkent City Math Olympiad</h3>
+            <p class="muted">Qualified for Uzbekistan's national olympiad (IMO team selection).</p>
+          </div>
+          <div class="entry">
+            <h3>Amiri Scholarship</h3>
+            <p class="muted">1 of 20 international awardees.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION & SKILLS ========== -->
+    <section class="section container">
+      <h2>Education &amp; Skills</h2>
 
       <div class="card">
         <h3>University of Doha for Science and Technology</h3>
-        <p class="muted small">B.Sc. Artificial Intelligence and Data Science</p>
-        <p class="muted small">GPA 3.87 / 4.0 · Dean's List · Amiri Scholar</p>
+        <p class="muted small">B.Sc. Artificial Intelligence and Data Science · Sep 2024 – Jun 2028 (expected)</p>
+        <p class="muted small">GPA 3.87 / 4.0 · Dean's List every year · Amiri Scholar</p>
+        <p class="muted small">Coursework: Data Structures &amp; Algorithms, Machine Learning, Statistics, Linear Algebra, Operating Systems, Databases</p>
+
+        <div class="about-facts">
+          <div>
+            <p class="muted small">Programming</p>
+            <p>Python, SQL, basic Java &amp; JavaScript</p>
+          </div>
+          <div>
+            <p class="muted small">AI &amp; Data</p>
+            <p>ML, Deep Learning, Statistics, RAG, AI agents</p>
+          </div>
+          <div>
+            <p class="muted small">Tools</p>
+            <p>Claude Code, Git, Docker, AWS, PostgreSQL, Flask, n8n</p>
+          </div>
+          <div>
+            <p class="muted small">Languages</p>
+            <p>Uzbek (native), English (fluent)</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -157,131 +233,107 @@
   <footer class="container muted small">© 2026 Diyorbek Imomaliev</footer>
 
   <!-- ========== PROJECT POPUPS ========== -->
-  <!-- Add images or videos to the gallery:
-           <img src="images/file.png" alt="">
-           <video src="videos/file.mp4" controls></video>
-           <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe> -->
+  <!-- Videos use data-src so they only load (and stop) when the popup opens. -->
 
-    <dialog id="project-1" class="popup">
-      <div class="popup-content">
-        <button class="close-button" onclick="closeProject('project-1')" aria-label="Close">✕</button>
+  <dialog id="project-doorstep" class="popup">
+    <div class="popup-content">
+      <button class="close-button" onclick="closeProject('project-doorstep')" aria-label="Close">✕</button>
 
-        <div class="gallery">
-          <div class="media">Image 1</div>
-          <div class="media">Image 2</div>
-          <div class="media">Demo video</div>
-        </div>
-
-        <h2>Bilingual RAG Assistant</h2>
-        <p class="muted">An AI assistant that answers Arabic and English questions from English product documentation, built at UPDIVE.</p>
-
-        <h3>What I did</h3>
-        <ul class="muted">
-          <li>Tuned document chunking for more accurate retrieval</li>
-          <li>Implemented cross-lingual embedding search for Arabic queries</li>
-          <li>Evaluated retrieval on a 50-question test set</li>
-        </ul>
-
-        <h3>Result</h3>
-        <p class="muted">94% top-3 retrieval recall.</p>
-
-        <h3>Tools</h3>
-        <p class="muted">Python, RAG, embeddings, retrieval evaluation</p>
+      <div class="gallery">
+        <iframe data-src="https://www.youtube.com/embed/z5owHAEQOGk" title="Doorstep demo video" allowfullscreen></iframe>
+        <img src="images/doorstep/control-room.jpg" alt="Delivery control room dashboard" loading="lazy">
+        <img src="images/doorstep/case.jpg" alt="Case view with refund recommendation" loading="lazy">
+        <img src="images/doorstep/money.jpg" alt="Money overview" loading="lazy">
+        <img src="images/doorstep/proof.jpg" alt="Proof of delivery checks" loading="lazy">
+        <img src="images/doorstep/policy.jpg" alt="Refund policy" loading="lazy">
       </div>
-    </dialog>
 
-    <dialog id="project-2" class="popup">
-      <div class="popup-content">
-        <button class="close-button" onclick="closeProject('project-2')" aria-label="Close">✕</button>
+      <h2>Doorstep</h2>
+      <p class="muted">A live AI agent for small PayPal sellers, built for the PayPal AI Hackathon 2026 with Claude Code. It audits the courier's "Delivered" scan, refunds the buyer through PayPal and drafts a carrier claim in which every sentence cites a checked fact.</p>
 
-        <div class="gallery">
-          <div class="media">Image 1</div>
-          <div class="media">Image 2</div>
-          <div class="media">Demo video</div>
-        </div>
+      <h3>What I did</h3>
+      <ul class="muted">
+        <li>Kept AI away from money: refunds go through one policy gate and an idempotent outbox, with signed receipts</li>
+        <li>Integrated PayPal Orders, Refunds, Disputes and webhooks</li>
+        <li>Steered the build with specs and CI gates, including mutation testing on money code</li>
+      </ul>
 
-        <h2>Speaking Practice Bot</h2>
-        <p class="muted">A Telegram bot that helps users practise IELTS speaking with instant AI feedback.</p>
+      <h3>Result</h3>
+      <p class="muted">0 unsafe replies reached buyers in 64 injection probes. 2,017 tests with full branch coverage.</p>
 
-        <h3>What I did</h3>
-        <ul class="muted">
-          <li>Built an async Python chatbot</li>
-          <li>Integrated Whisper for speech transcription</li>
-          <li>Used Gemini AI for corrections and suggestions</li>
-          <li>Added user analytics with SQLite and deployed with Docker</li>
-        </ul>
+      <h3>Tools</h3>
+      <p class="muted">Python, PayPal API, LLM agents, Claude Code, CI</p>
 
-        <h3>Tools</h3>
-        <p class="muted">Python, Whisper, Gemini, SQLite, Docker</p>
-
-        <div class="buttons">
-          <a href="#" class="button button-primary">Live demo</a>
-          <a href="#" class="button">Code</a>
-        </div>
+      <div class="buttons">
+        <a href="https://doorstep-ojmg.onrender.com/" class="button button-primary" target="_blank" rel="noopener">Live demo</a>
+        <a href="https://www.youtube.com/watch?v=z5owHAEQOGk" class="button" target="_blank" rel="noopener">Video</a>
+        <a href="https://github.com/DiyorbekImomaliyev/doorstep" class="button" target="_blank" rel="noopener">Code</a>
       </div>
-    </dialog>
+    </div>
+  </dialog>
 
-    <dialog id="project-3" class="popup">
-      <div class="popup-content">
-        <button class="close-button" onclick="closeProject('project-3')" aria-label="Close">✕</button>
+  <dialog id="project-bandwidth" class="popup">
+    <div class="popup-content">
+      <button class="close-button" onclick="closeProject('project-bandwidth')" aria-label="Close">✕</button>
 
-        <div class="gallery">
-          <div class="media">Image 1</div>
-          <div class="media">Image 2</div>
-          <div class="media">Demo video</div>
-        </div>
-
-        <h2>Cross-Language Communication Tool</h2>
-        <p class="muted">A real-time Uzbek, English and Arabic translator for voice and text, co-developed with a teammate.</p>
-
-        <h3>What I did</h3>
-        <ul class="muted">
-          <li>Built voice and text translation across three languages</li>
-          <li>Implemented AI-powered payment verification</li>
-          <li>Delivered an admin dashboard for analytics and subscriptions</li>
-        </ul>
-
-        <h3>Result</h3>
-        <p class="muted">95%+ translation accuracy and 85% fewer manual payment checks.</p>
-
-        <h3>Tools</h3>
-        <p class="muted">Python, AI speech and translation models</p>
-
-        <div class="buttons">
-          <a href="#" class="button button-primary">Live demo</a>
-          <a href="#" class="button">Code</a>
-        </div>
+      <div class="gallery">
+        <img src="images/bandwidth/chat.svg" alt="Bandwidth Telegram conversation" loading="lazy">
       </div>
-    </dialog>
 
-    <dialog id="project-4" class="popup">
-      <div class="popup-content">
-        <button class="close-button" onclick="closeProject('project-4')" aria-label="Close">✕</button>
+      <h2>Bandwidth</h2>
+      <p class="muted">A private AI agent for students on Telegram, built with Claude Code. It plans your study day, finds opportunities that fit you and fills in the applications.</p>
 
-        <div class="gallery">
-          <div class="media">Image 1</div>
-          <div class="media">Image 2</div>
-          <div class="media">Demo video</div>
-        </div>
+      <h3>What I did</h3>
+      <ul class="muted">
+        <li>Planned the study day from the D2L calendar, with alerts before every deadline</li>
+        <li>Ranked openings from about 40 sources against the user's interests</li>
+        <li>Filled application forms on any site (Greenhouse, Lever, Google Forms), submitting only after the user approves</li>
+        <li>Enforced privacy in code: personal data stays on a local LLM, and cloud calls containing private terms are blocked</li>
+      </ul>
 
-        <h2>Fraud Detection Model</h2>
-        <p class="muted">Fraud detection models for highly imbalanced data, built at OrbiDefence in a 5-person team.</p>
+      <h3>Tools</h3>
+      <p class="muted">Python, Telegram Bot API, local LLM, browser automation, Claude Code</p>
 
-        <h3>What I did</h3>
-        <ul class="muted">
-          <li>Performed EDA and feature engineering</li>
-          <li>Balanced the data with SMOTE</li>
-          <li>Selected thresholds with stratified cross-validation</li>
-          <li>Deployed the model with Flask, Docker and AWS</li>
-        </ul>
-
-        <h3>Result</h3>
-        <p class="muted">Higher fraud recall while keeping precision.</p>
-
-        <h3>Tools</h3>
-        <p class="muted">Python, scikit-learn, Pandas, Flask, Docker, AWS</p>
+      <div class="buttons">
+        <a href="https://github.com/DiyorbekImomaliyev/bandwidth" class="button button-primary" target="_blank" rel="noopener">Code</a>
       </div>
-    </dialog>
+    </div>
+  </dialog>
+
+  <dialog id="project-fraud" class="popup">
+    <div class="popup-content">
+      <button class="close-button" onclick="closeProject('project-fraud')" aria-label="Close">✕</button>
+
+      <div class="gallery">
+        <img src="images/fraud/fig1_overview.jpg" alt="Dataset overview" loading="lazy">
+        <img src="images/fraud/fig9_curves.jpg" alt="Precision-recall and ROC curves for six models" loading="lazy">
+        <img src="images/fraud/fig13_shap_global.jpg" alt="SHAP global feature importance" loading="lazy">
+        <img src="images/fraud/fig17_drift.jpg" alt="Concept drift study" loading="lazy">
+        <img src="images/fraud/fig18_retraining.jpg" alt="Retraining recovers performance" loading="lazy">
+      </div>
+
+      <h2>Card-Fraud Detection System</h2>
+      <p class="muted">An end-to-end machine learning pipeline for card fraud, built with Claude Code.</p>
+
+      <h3>What I did</h3>
+      <ul class="muted">
+        <li>Generated a 151K-transaction synthetic card dataset (75 features, 1.5% fraud, 7 fraud types) with a time-ordered split</li>
+        <li>Compared 12 models, from logistic regression to XGBoost, CatBoost and neural nets, with paired-bootstrap tests</li>
+        <li>Showed in a controlled concept-drift study that a static model decays as fraud adapts and retraining recovers it</li>
+        <li>Explained predictions with SHAP and scored each transaction in 5.6 ms</li>
+      </ul>
+
+      <h3>Result</h3>
+      <p class="muted">XGBoost led at 0.984 test PR-AUC, catching 251 of 273 frauds with 5 false alarms.</p>
+
+      <h3>Tools</h3>
+      <p class="muted">Python, XGBoost, CatBoost, scikit-learn, SHAP, Pandas</p>
+
+      <div class="buttons">
+        <a href="https://github.com/DiyorbekImomaliyev/fraud-detection-system-last" class="button button-primary" target="_blank" rel="noopener">Code</a>
+      </div>
+    </div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
