@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+  <rect width="800" height="500" fill="#0E1826"/>
+  <g stroke="#6FB1F2" stroke-width="2.5" fill="none" stroke-dasharray="6 6">
+    <path d="M200 140 L360 235"/><path d="M200 360 L360 265"/><path d="M600 140 L440 235"/><path d="M600 360 L440 265"/>
+  </g>
+  <rect x="340" y="210" width="120" height="80" rx="18" fill="#264266" stroke="#6FB1F2" stroke-width="2"/>
+  <text x="400" y="246" text-anchor="middle" font-size="16" fill="#fff" font-weight="700">Global model</text>
+  <text x="400" y="268" text-anchor="middle" font-size="13" fill="#BCCAD7">aggregates updates</text>
+  <g font-size="14" fill="#EAF0F5" text-anchor="middle">
+    <rect x="110" y="90" width="180" height="90" rx="16" fill="#15223A" stroke="#26374F"/><text x="200" y="125" font-weight="600">Site A · edge device</text><text x="200" y="150" fill="#BCCAD7">energy data stays local</text>
+    <rect x="110" y="320" width="180" height="90" rx="16" fill="#15223A" stroke="#26374F"/><text x="200" y="355" font-weight="600">Site B · edge device</text><text x="200" y="380" fill="#BCCAD7">energy data stays local</text>
+    <rect x="510" y="90" width="180" height="90" rx="16" fill="#15223A" stroke="#26374F"/><text x="600" y="125" font-weight="600">Site C · edge device</text><text x="600" y="150" fill="#BCCAD7">energy data stays local</text>
+    <rect x="510" y="320" width="180" height="90" rx="16" fill="#15223A" stroke="#26374F"/><text x="600" y="355" font-weight="600">Site D · edge device</text><text x="600" y="380" fill="#BCCAD7">energy data stays local</text>
+  </g>
+  <text x="400" y="460" text-anchor="middle" font-size="15" fill="#6FB1F2">Only model updates travel · raw data never leaves the site</text>
+</svg>

@@ -1,4 +1,0 @@
-Flask
-Markdown
-python-dotenv
-gunicorn

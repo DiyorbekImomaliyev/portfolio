@@ -1,12 +1,16 @@
 services:
   - type: web
-    name: diyorbekai
-    runtime: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn application:app
-    envVars:
-      - key: SECRET_KEY
-        generateValue: true
-      - key: ADMIN_PASSWORD
-        sync: false
+    name: portfolio
+    runtime: static
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /images/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
