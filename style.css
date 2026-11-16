@@ -418,29 +418,8 @@ p {
   color: var(--accent);
 }
 
-.footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 56px;
-  padding-top: 24px;
-  padding-bottom: 40px;
-  border-top: 1px solid var(--border);
-}
-
-.footer-links {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-links a {
-  color: var(--text-light);
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: var(--text);
+main {
+  padding-bottom: 64px;
 }
 
 /* ========== SKILLS ========== */
