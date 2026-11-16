@@ -42,8 +42,10 @@ PROJECTS.forEach(function (p) {
       '<button class="close-button" data-close aria-label="Close">✕</button>' +
       '<div class="popup-body">' +
         '<div class="viewer">' +
-          '<div class="stage"></div>' +
-          (multi ? '<button class="nav-arrow prev" aria-label="Previous">‹</button><button class="nav-arrow next" aria-label="Next">›</button><span class="counter"></span>' : '') +
+          '<div class="stage-wrap"><div class="stage"></div>' +
+          (multi ? '<button class="nav-arrow prev" aria-label="Previous">‹</button><button class="nav-arrow next" aria-label="Next">›</button>' : '') +
+          '</div>' +
+          (multi ? '<span class="counter"></span>' : '') +
           (multi ? '<div class="thumbs">' + thumbs + '</div>' : '') +
         '</div>' +
         '<div class="details">' +

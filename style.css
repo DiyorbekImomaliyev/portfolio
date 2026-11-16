@@ -373,8 +373,8 @@ footer {
 /* ========== PROJECT POPUP ========== */
 .popup {
   width: 94%;
-  max-width: 1060px;
-  max-height: 90vh;
+  max-width: 900px;
+  max-height: 86vh;
   padding: 0;
   border: none;
   border-radius: 24px;
@@ -408,8 +408,8 @@ footer {
 
 .popup-body {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  max-height: 90vh;
+  grid-template-columns: 1fr 1fr;
+  max-height: 86vh;
 }
 
 /* Left: image viewer */
@@ -419,17 +419,22 @@ footer {
   flex-direction: column;
   justify-content: center;
   gap: 12px;
-  padding: 24px;
+  padding: 20px;
   background: var(--accent-soft);
   min-width: 0;
+}
+
+.stage-wrap {
+  position: relative;
 }
 
 .stage {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 4 / 3;
-  max-height: 56vh;
+  aspect-ratio: 16 / 10;
+  max-height: 260px;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 14px;
   background: var(--background);
@@ -450,21 +455,22 @@ footer {
 
 .nav-arrow {
   position: absolute;
-  top: calc(24px + 28vh - 22px);
-  width: 40px;
-  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--border);
   border-radius: 50%;
   background: var(--background);
   color: var(--text);
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1;
   cursor: pointer;
   opacity: 0.9;
 }
 
-.nav-arrow.prev { left: 34px; }
-.nav-arrow.next { right: 34px; }
+.nav-arrow.prev { left: 8px; }
+.nav-arrow.next { right: 8px; }
 
 .counter {
   align-self: flex-end;
@@ -482,8 +488,8 @@ footer {
 
 .thumb {
   position: relative;
-  flex: 0 0 76px;
-  height: 52px;
+  flex: 0 0 60px;
+  height: 42px;
   padding: 0;
   border: 2px solid transparent;
   border-radius: 10px;
@@ -518,9 +524,10 @@ footer {
 
 /* Right: details */
 .details {
-  padding: 32px 28px 28px;
+  padding: 28px 26px 24px;
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 86vh;
+  font-size: 16px;
 }
 
 .eyebrow {
@@ -534,8 +541,8 @@ footer {
 }
 
 .details h2 {
-  margin-bottom: 10px;
-  font-size: 28px;
+  margin-bottom: 8px;
+  font-size: 24px;
 }
 
 .details h3 {
@@ -620,15 +627,8 @@ footer {
   }
 
   .stage {
-    max-height: 40vh;
+    max-height: 220px;
   }
-
-  .nav-arrow {
-    top: calc(14px + 20vh - 20px);
-  }
-
-  .nav-arrow.prev { left: 22px; }
-  .nav-arrow.next { right: 22px; }
 
   .details {
     max-height: none;
