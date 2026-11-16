@@ -33,8 +33,9 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 18px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
   line-height: 1.6;
 }
 
@@ -49,7 +50,7 @@ p {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -68,7 +69,9 @@ p {
   top: 0;
   z-index: 10;
   padding-top: env(safe-area-inset-top, 0px);
-  background: var(--background);
+  background: color-mix(in srgb, var(--background) 88%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -86,11 +89,45 @@ p {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 22px;
+}
+
+.nav .brand {
+  font-weight: 600;
 }
 
 .nav-links a {
   color: var(--text-light);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
 }
 
 /* ========== BUTTONS ========== */
@@ -102,8 +139,11 @@ p {
 }
 
 .button {
-  padding: 12px 22px;
+  padding: 10px 18px;
   border-radius: 12px;
+  font-size: 15px;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.15s ease;
   border: 1px solid var(--border);
   background: var(--card);
   color: var(--text);
@@ -118,7 +158,8 @@ p {
 }
 
 .button:hover {
-  opacity: 0.85;
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
 /* ========== HERO ========== */
@@ -132,15 +173,38 @@ p {
 }
 
 .profile-photo {
+  display: block;
   width: 160px;
   height: 160px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2FB56B;
+}
+
 .hero h1 {
-  margin-top: 24px;
+  margin-top: 14px;
   font-size: 48px;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
@@ -168,13 +232,20 @@ p {
 
 /* ========== SECTIONS ========== */
 .section {
-  padding-top: 56px;
-  padding-bottom: 24px;
+  padding-top: 64px;
+  padding-bottom: 8px;
+  scroll-margin-top: 68px;
 }
 
 .section > h2 {
   margin-bottom: 24px;
-  font-size: 32px;
+  font-size: 30px;
+  letter-spacing: -0.015em;
+}
+
+.section > .lead {
+  margin: -14px 0 24px;
+  font-size: 16px;
 }
 
 .card h2 {
@@ -311,6 +382,11 @@ p {
   object-fit: cover;
 }
 
+.media.contain img {
+  object-fit: contain;
+  background: #FFFFFF;
+}
+
 /* ========== RESEARCH, LEADERSHIP ========== */
 .research {
   display: grid;
@@ -365,9 +441,64 @@ p {
   color: var(--accent);
 }
 
-footer {
-  padding-top: 32px;
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 56px;
+  padding-top: 24px;
   padding-bottom: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+/* ========== SKILLS ========== */
+.skills {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips span {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--background);
+  font-size: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
 }
 
 /* ========== PROJECT POPUP ========== */
@@ -581,9 +712,29 @@ footer {
 
 /* ========== PHONES ========== */
 @media (max-width: 700px) {
+  .nav .brand {
+    display: none;
+  }
+
+  .nav-inner {
+    justify-content: center;
+  }
+
   .nav-links {
-    gap: 12px;
-    font-size: 16px;
+    gap: 16px;
+  }
+
+  .media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .button {
+    padding: 9px 15px;
   }
 
   .hero,

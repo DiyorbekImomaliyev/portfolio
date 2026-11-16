@@ -18,7 +18,7 @@ PROJECTS.forEach(function (p) {
   // ----- card -----
   grid.appendChild(el(
     '<button class="project-card" data-open="' + p.id + '">' +
-      '<div class="media"><img src="' + p.cover + '" alt="' + p.title + '" loading="lazy"></div>' +
+      '<div class="media' + (p.fit === "contain" ? " contain" : "") + '"><img src="' + p.cover + '" alt="' + p.title + '" loading="lazy"></div>' +
       '<h3>' + p.title + '</h3>' +
       '<p class="muted">' + p.card + '</p>' +
       '<p class="tags">' + p.tag + '</p>' +
@@ -110,3 +110,23 @@ grid.addEventListener("click", function (e) {
   dlg._show(0);
   dlg.showModal();
 });
+
+/* Highlight the nav link of the section being read */
+(function () {
+  var links = document.querySelectorAll(".nav-links a");
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+  if (!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting && map[en.target.id]) {
+        links.forEach(function (a) { a.classList.remove("active"); });
+        map[en.target.id].classList.add("active");
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px" });
+  Object.keys(map).forEach(function (id) {
+    var sec = document.getElementById(id);
+    if (sec) io.observe(sec);
+  });
+})();

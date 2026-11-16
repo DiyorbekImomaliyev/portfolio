@@ -72,6 +72,7 @@ const PROJECTS = [
     result: "XGBoost led at 0.984 test PR-AUC, catching 251 of 273 frauds with 5 false alarms.",
     tools: "Python, XGBoost, CatBoost, scikit-learn, SHAP, Pandas",
     cover: "images/fraud/fig9_curves.jpg",
+    fit: "contain",
     gallery: [
       { type: "image", src: "images/fraud/fig1_overview.jpg", alt: "Dataset overview" },
       { type: "image", src: "images/fraud/fig9_curves.jpg", alt: "Precision-recall and ROC curves for six models" },
@@ -176,6 +177,7 @@ const PROJECTS = [
     result: "Higher fraud recall while keeping precision.",
     tools: "Python, scikit-learn, Pandas, Flask, Docker, AWS",
     cover: "images/orbi/live-queue.jpg",
+    fit: "contain",
     gallery: [
       { type: "image", src: "images/orbi/live-queue.jpg", alt: "Live fraud review queue" },
       { type: "image", src: "images/orbi/score.jpg", alt: "Score a transaction" }
